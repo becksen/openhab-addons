@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="linktap"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<thing-type id="TP1B">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="gateway" />
+		</supported-bridge-type-refs>
+		<label>Taplinker Model TP-1B</label>
+		<description>Taplinker Model TP-1B Wireless Water Timer</description>
+
+		<channels>
+			<channel id="status" typeId="status" /><channel typeId="location" id="location"></channel>
+			<channel typeId="signal-strength" id="signal"></channel>
+			<channel typeId="battery-level" id="battery-status"></channel>
+			<channel typeId="power" id="watering"></channel>
+		</channels>
+		<representation-property>taplinkerId</representation-property>
+
+	</thing-type>
+
+	<!-- Sample Channel Type -->
+	<channel-type id="status">
+		<item-type>String</item-type>
+		<label>Device Status</label>
+		<description>States if device is connected or not</description>
+		<state readOnly="true"></state>
+	</channel-type>
+
+</thing:thing-descriptions>

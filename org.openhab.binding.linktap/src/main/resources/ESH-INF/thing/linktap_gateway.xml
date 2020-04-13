@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="linktap"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!--LinkTap Gateway-->
+	<bridge-type id="gateway">
+		<label>Linktap Gateway</label>
+		<description>Linktap Gateway GW-01</description>
+		<channels>
+			<channel typeId="status" id="status"></channel>
+		</channels>
+		<properties>
+			<property name="gatewayId">Unique Identifier of the  Gateway
+			</property>
+		</properties>
+		<representation-property>gatewayId</representation-property>
+		<config-description>
+			<parameter name="gatewayId" type="text" required="true">
+				<description>Id of the used Linktap Gateway without last for characters</description>
+				<label>Gateway ID</label></parameter>
+			<parameter name="username" type="text" required="true">
+				<label>Linktap Username</label>
+				<description>Username for login for Linktap cloud account</description>
+			</parameter>
+			<parameter name="apiKey" type="text" required="true">
+				<context>Password</context>
+				<label>Api Key</label>
+				<description>API key for accessing Linktap API https://www.link-tap.com/api/</description>
+			</parameter></config-description>
+	</bridge-type>
+
+</thing:thing-descriptions>
